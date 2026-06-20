@@ -53,83 +53,75 @@
       gap: 12px;
     }
 
-    .logo {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--accent);
-      flex-shrink: 0;
-    }
+    .logo { font-size: 1.1rem; font-weight: 800; color: var(--accent); flex-shrink: 0; }
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
+    .header-right { display: flex; align-items: center; gap: 10px; min-width: 0; }
 
     .live-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.72rem;
-      color: var(--success);
-      font-weight: 700;
-      background: #f0fdf4;
-      padding: 3px 9px;
-      border-radius: 20px;
-      border: 1px solid #bbf7d0;
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.72rem; color: var(--success); font-weight: 700;
+      background: #f0fdf4; padding: 3px 9px; border-radius: 20px;
+      border: 1px solid #bbf7d0; flex-shrink: 0;
     }
 
     .live-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--success);
-      animation: pulse 1.4s infinite;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--success); animation: pulse 1.4s infinite;
     }
 
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-    /* ユーザー情報エリア（ログイン済み） */
-    .user-area {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .user-area { display: flex; align-items: center; gap: 8px; }
 
     .user-email {
-      font-size: 0.78rem;
-      color: var(--text-sub);
-      max-width: 160px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      font-size: 0.78rem; color: var(--text-sub);
+      max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
 
     .user-avatar-sm {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 800;
-      flex-shrink: 0;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 800; flex-shrink: 0; cursor: pointer;
     }
+
+    /* ━━━ ページナビ ━━━ */
+    .page-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+    }
+
+    .page-nav-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+
+    .nav-tab {
+      padding: 12px 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-family: inherit;
+      border: none;
+      background: transparent;
+      color: var(--text-sub);
+      cursor: pointer;
+      border-bottom: 2.5px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      margin-bottom: -1px;
+    }
+
+    .nav-tab:hover { color: var(--accent); }
+    .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
     /* ボタン共通 */
     .btn {
-      padding: 7px 16px;
-      border-radius: var(--radius-sm);
-      font-size: 0.83rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      transition: background 0.15s, transform 0.1s;
-      white-space: nowrap;
+      padding: 7px 16px; border-radius: var(--radius-sm);
+      font-size: 0.83rem; font-weight: 700; font-family: inherit;
+      cursor: pointer; border: none;
+      transition: background 0.15s, transform 0.1s; white-space: nowrap;
     }
 
     .btn:active { transform: scale(0.96); }
@@ -143,317 +135,179 @@
 
     /* ━━━ 認証モーダル ━━━ */
     .modal-backdrop {
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background: rgba(15,20,40,0.45);
       backdrop-filter: blur(4px);
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      z-index: 200; display: flex; align-items: center;
+      justify-content: center; padding: 20px;
       animation: fadeIn 0.2s ease;
     }
 
     @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 
     .modal {
-      background: var(--surface);
-      border-radius: 20px;
+      background: var(--surface); border-radius: 20px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.18);
-      width: 100%;
-      max-width: 400px;
-      padding: 28px;
+      width: 100%; max-width: 400px; padding: 28px;
       animation: slideUp 0.22s ease;
     }
 
     @keyframes slideUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
     .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 22px;
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px;
     }
 
-    .modal-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--text);
-    }
+    .modal-title { font-size: 1.1rem; font-weight: 800; color: var(--text); }
 
     .modal-close {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      border: none;
-      background: var(--bg);
-      color: var(--text-sub);
-      cursor: pointer;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 30px; height: 30px; border-radius: 50%; border: none;
+      background: var(--bg); color: var(--text-sub); cursor: pointer;
+      font-size: 1rem; display: flex; align-items: center; justify-content: center;
       transition: background 0.15s;
     }
 
     .modal-close:hover { background: var(--border); }
 
-    /* タブ */
     .auth-tabs {
-      display: flex;
-      gap: 4px;
-      background: var(--bg);
-      border-radius: var(--radius-sm);
-      padding: 4px;
-      margin-bottom: 22px;
+      display: flex; gap: 4px; background: var(--bg);
+      border-radius: var(--radius-sm); padding: 4px; margin-bottom: 22px;
     }
 
     .auth-tab {
-      flex: 1;
-      padding: 9px;
-      border: none;
-      border-radius: 8px;
-      font-size: 0.87rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      background: transparent;
-      color: var(--text-sub);
-      transition: all 0.15s;
+      flex: 1; padding: 9px; border: none; border-radius: 8px;
+      font-size: 0.87rem; font-weight: 700; font-family: inherit;
+      cursor: pointer; background: transparent; color: var(--text-sub); transition: all 0.15s;
     }
 
-    .auth-tab.active {
-      background: var(--surface);
-      color: var(--accent);
-      box-shadow: var(--shadow-sm);
-    }
+    .auth-tab.active { background: var(--surface); color: var(--accent); box-shadow: var(--shadow-sm); }
 
     .auth-form { display: flex; flex-direction: column; gap: 14px; }
-
     .auth-field { display: flex; flex-direction: column; gap: 5px; }
 
-    .auth-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-sub);
-      letter-spacing: 0.03em;
-    }
+    .auth-label { font-size: 0.75rem; font-weight: 700; color: var(--text-sub); letter-spacing: 0.03em; }
 
     .auth-input {
-      padding: 11px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm);
-      font-size: 0.95rem;
-      font-family: inherit;
-      background: var(--surface2);
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      width: 100%;
+      padding: 11px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-size: 0.95rem; font-family: inherit; background: var(--surface2); color: var(--text);
+      outline: none; transition: border-color 0.15s, box-shadow 0.15s; width: 100%;
     }
 
     .auth-input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(79,127,255,0.12);
-      background: #fff;
+      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,127,255,0.12); background: #fff;
     }
 
     .btn-auth {
-      padding: 12px;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-size: 0.97rem;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      transition: background 0.15s, transform 0.1s;
-      margin-top: 4px;
+      padding: 12px; background: var(--accent); color: #fff; border: none;
+      border-radius: var(--radius-sm); font-size: 0.97rem; font-weight: 700;
+      font-family: inherit; cursor: pointer; transition: background 0.15s, transform 0.1s; margin-top: 4px;
     }
 
     .btn-auth:hover { background: var(--accent-dark); }
     .btn-auth:active { transform: scale(0.97); }
     .btn-auth:disabled { background: #a0aec0; cursor: not-allowed; }
 
-    .auth-msg {
-      font-size: 0.82rem;
-      text-align: center;
-      min-height: 18px;
-      padding: 2px 0;
-    }
-
+    .auth-msg { font-size: 0.82rem; text-align: center; min-height: 18px; padding: 2px 0; }
     .auth-msg.ok  { color: var(--success); font-weight: 600; }
     .auth-msg.err { color: var(--danger); }
 
-    /* ━━━ メイン ━━━ */
+    /* ━━━ メイン共通 ━━━ */
     .main { max-width: 720px; margin: 0 auto; padding: 28px 16px 80px; }
 
-    /* セットアップ案内 */
+    /* フィールド */
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field.full { grid-column: 1 / -1; }
+
+    label { font-size: 0.75rem; font-weight: 700; color: var(--text-sub); letter-spacing: 0.03em; }
+
+    input, textarea, select {
+      padding: 10px 13px; border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-size: 0.93rem; font-family: inherit; background: var(--surface2); color: var(--text);
+      outline: none; transition: border-color 0.18s, box-shadow 0.18s; width: 100%;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,127,255,0.12); background: #fff;
+    }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    .status-msg { font-size: 0.83rem; min-height: 18px; flex: 1; }
+    .status-msg.ok  { color: var(--success); font-weight: 600; }
+    .status-msg.err { color: var(--danger); }
+
+    /* ━━━ セットアップ案内 ━━━ */
     .setup-card {
-      background: #fff8f0;
-      border: 1.5px solid #fed7aa;
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      margin-bottom: 24px;
+      background: #fff8f0; border: 1.5px solid #fed7aa;
+      border-radius: var(--radius); padding: 20px 22px; margin-bottom: 24px;
     }
 
     .setup-card h3 { font-size: 0.95rem; color: #92400e; margin-bottom: 10px; }
 
     .setup-card pre {
-      background: #fff;
-      border: 1px solid #fcd34d;
-      border-radius: 8px;
-      padding: 12px 14px;
-      font-size: 0.78rem;
-      color: #451a03;
-      overflow-x: auto;
-      line-height: 1.7;
-      font-family: 'Consolas', 'Courier New', monospace;
+      background: #fff; border: 1px solid #fcd34d; border-radius: 8px;
+      padding: 12px 14px; font-size: 0.78rem; color: #451a03;
+      overflow-x: auto; line-height: 1.7; font-family: 'Consolas', 'Courier New', monospace;
     }
 
     .setup-card p { font-size: 0.82rem; color: #92400e; margin-top: 10px; }
 
-    /* ログイン促進バナー */
+    /* ━━━ ログイン促進バナー ━━━ */
     .login-banner {
-      background: var(--accent-light);
-      border: 1.5px solid #c7d9ff;
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
+      background: var(--accent-light); border: 1.5px solid #c7d9ff;
+      border-radius: var(--radius); padding: 18px 20px; margin-bottom: 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
     }
 
     .login-banner-text { font-size: 0.88rem; color: var(--accent-dark); font-weight: 600; }
     .login-banner-sub  { font-size: 0.78rem; color: var(--text-sub); margin-top: 2px; }
 
-    /* 投稿フォーム */
+    /* ━━━ 掲示板ページ ━━━ */
     .post-form {
-      background: var(--surface);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px;
-      margin-bottom: 28px;
-      border: 1px solid var(--border);
+      background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 22px; margin-bottom: 28px; border: 1px solid var(--border);
     }
 
-    .form-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
+    .form-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
 
     .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 12px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;
     }
-
-    .field { display: flex; flex-direction: column; gap: 5px; }
-    .field.full { grid-column: 1 / -1; }
-
-    label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-sub);
-      letter-spacing: 0.03em;
-    }
-
-    input, textarea, select {
-      padding: 10px 13px;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm);
-      font-size: 0.93rem;
-      font-family: inherit;
-      background: var(--surface2);
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.18s, box-shadow 0.18s;
-      width: 100%;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(79,127,255,0.12);
-      background: #fff;
-    }
-
-    textarea { resize: vertical; min-height: 100px; }
 
     .btn-row { display: flex; gap: 10px; align-items: center; margin-top: 14px; }
 
     .btn-post {
-      padding: 11px 28px;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.18s, transform 0.1s;
-      font-family: inherit;
+      padding: 11px 28px; background: var(--accent); color: #fff; border: none;
+      border-radius: var(--radius-sm); font-size: 0.95rem; font-weight: 700;
+      cursor: pointer; transition: background 0.18s, transform 0.1s; font-family: inherit;
     }
 
     .btn-post:hover { background: var(--accent-dark); }
     .btn-post:active { transform: scale(0.97); }
     .btn-post:disabled { background: #a0aec0; cursor: not-allowed; }
 
-    .status-msg {
-      font-size: 0.83rem;
-      min-height: 18px;
-      flex: 1;
-    }
-
-    .status-msg.ok  { color: var(--success); font-weight: 600; }
-    .status-msg.err { color: var(--danger); }
-
-    /* フィルターバー */
     .filter-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
+      display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;
     }
 
     .filter-bar h2 { font-size: 0.95rem; font-weight: 700; flex: 1; }
 
     .count-badge {
-      font-size: 0.75rem;
-      color: var(--text-sub);
-      background: var(--border);
-      padding: 3px 10px;
-      border-radius: 20px;
+      font-size: 0.75rem; color: var(--text-sub); background: var(--border);
+      padding: 3px 10px; border-radius: 20px;
     }
 
     .filter-select {
-      padding: 6px 10px;
-      font-size: 0.82rem;
-      border-radius: 8px;
-      border: 1.5px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      cursor: pointer;
-      width: auto;
+      padding: 6px 10px; font-size: 0.82rem; border-radius: 8px;
+      border: 1.5px solid var(--border); background: var(--surface); color: var(--text);
+      cursor: pointer; width: auto;
     }
 
-    /* 投稿カード */
     .posts-list { display: flex; flex-direction: column; gap: 14px; }
 
     .post-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      padding: 18px 20px;
-      animation: slideIn 0.25s ease;
+      background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm); padding: 18px 20px; animation: slideIn 0.25s ease;
     }
 
     @keyframes slideIn { from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
@@ -461,49 +315,116 @@
     .card-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
 
     .avatar {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      font-weight: 800;
-      color: #fff;
-      flex-shrink: 0;
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 800; color: #fff; flex-shrink: 0;
     }
 
     .card-meta { flex: 1; min-width: 0; }
-
     .card-name { font-size: 0.95rem; font-weight: 700; color: var(--text); }
 
-    .card-sub {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 3px;
-      flex-wrap: wrap;
-    }
-
+    .card-sub { display: flex; align-items: center; gap: 8px; margin-top: 3px; flex-wrap: wrap; }
     .card-date { font-size: 0.75rem; color: var(--text-sub); }
 
     .room-tag {
-      font-size: 0.72rem;
-      background: var(--accent-light);
-      color: var(--accent);
-      padding: 2px 8px;
-      border-radius: 20px;
-      font-weight: 700;
+      font-size: 0.72rem; background: var(--accent-light); color: var(--accent);
+      padding: 2px 8px; border-radius: 20px; font-weight: 700;
     }
 
     .card-title { font-weight: 700; font-size: 0.97rem; margin-bottom: 8px; color: var(--text); }
 
     .card-body {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      color: #374151;
-      white-space: pre-wrap;
-      word-break: break-word;
+      font-size: 0.92rem; line-height: 1.7; color: #374151;
+      white-space: pre-wrap; word-break: break-word;
     }
+
+    /* ━━━ マイページ ━━━ */
+    .profile-page { display: none; }
+
+    .profile-hero {
+      background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm); padding: 28px 24px; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+
+    .profile-avatar-lg {
+      width: 72px; height: 72px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 800; color: #fff; flex-shrink: 0;
+    }
+
+    .profile-hero-info { flex: 1; min-width: 0; }
+
+    .profile-display-name {
+      font-size: 1.3rem; font-weight: 800; color: var(--text); margin-bottom: 4px;
+    }
+
+    .profile-email { font-size: 0.82rem; color: var(--text-sub); margin-bottom: 8px; }
+
+    .profile-bio-preview {
+      font-size: 0.88rem; color: var(--text-sub); line-height: 1.6;
+      white-space: pre-wrap; word-break: break-word;
+    }
+
+    .profile-links-preview { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+
+    .profile-link {
+      font-size: 0.82rem; color: var(--accent); text-decoration: none; display: inline-block;
+    }
+
+    .profile-link:hover { text-decoration: underline; }
+
+    .profile-updated {
+      font-size: 0.75rem; color: var(--text-sub); margin-top: 8px;
+    }
+
+    .profile-form-card {
+      background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm); padding: 24px;
+    }
+
+    .profile-form-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 20px; color: var(--text); }
+
+    .profile-fields { display: flex; flex-direction: column; gap: 16px; }
+
+    .profile-field { display: flex; flex-direction: column; gap: 6px; }
+
+    .profile-label { font-size: 0.75rem; font-weight: 700; color: var(--text-sub); letter-spacing: 0.03em; }
+
+    .profile-hint { font-size: 0.73rem; color: var(--text-sub); margin-top: 3px; }
+
+    .profile-input {
+      padding: 10px 13px; border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-size: 0.93rem; font-family: inherit; background: var(--surface2); color: var(--text);
+      outline: none; transition: border-color 0.18s, box-shadow 0.18s; width: 100%;
+    }
+
+    .profile-input:focus {
+      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,127,255,0.12); background: #fff;
+    }
+
+    .profile-textarea {
+      resize: vertical; min-height: 90px; line-height: 1.6;
+    }
+
+    .profile-save-row {
+      display: flex; align-items: center; gap: 12px; margin-top: 20px; padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn-save {
+      padding: 11px 32px; background: var(--accent); color: #fff; border: none;
+      border-radius: var(--radius-sm); font-size: 0.95rem; font-weight: 700;
+      cursor: pointer; transition: background 0.18s, transform 0.1s; font-family: inherit;
+    }
+
+    .btn-save:hover { background: var(--accent-dark); }
+    .btn-save:active { transform: scale(0.97); }
+    .btn-save:disabled { background: #a0aec0; cursor: not-allowed; }
+
+    .profile-msg { font-size: 0.83rem; min-height: 18px; }
+    .profile-msg.ok  { color: var(--success); font-weight: 600; }
+    .profile-msg.err { color: var(--danger); }
 
     /* 空・ロード状態 */
     .state-box { text-align: center; padding: 50px 20px; color: var(--text-sub); }
@@ -514,6 +435,7 @@
     @media (max-width: 480px) {
       .form-grid { grid-template-columns: 1fr; }
       .user-email { display: none; }
+      .profile-hero { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -525,7 +447,6 @@
     <div class="logo">💬 掲示板</div>
 
     <div class="header-right">
-      <!-- LIVE バッジ -->
       <span class="live-badge" id="liveBadge" style="display:none">
         <span class="live-dot"></span>LIVE
       </span>
@@ -537,13 +458,21 @@
 
       <!-- ログイン済み -->
       <div id="areaUser" class="user-area" style="display:none">
-        <div class="user-avatar-sm" id="userAvatarSm">?</div>
+        <div class="user-avatar-sm" id="userAvatarSm" onclick="showPage('profile')" title="マイページ">?</div>
         <span class="user-email" id="userEmailLabel"></span>
         <button class="btn btn-danger" onclick="signOut()">ログアウト</button>
       </div>
     </div>
   </div>
 </header>
+
+<!-- ━━━ ページナビ ━━━ -->
+<nav class="page-nav">
+  <div class="page-nav-inner">
+    <button class="nav-tab active" id="navBbs"     onclick="showPage('bbs')">📋 掲示板</button>
+    <button class="nav-tab"        id="navProfile" onclick="showPage('profile')" style="display:none">👤 マイページ</button>
+  </div>
+</nav>
 
 <!-- ━━━ 認証モーダル ━━━ -->
 <div class="modal-backdrop" id="authModal" style="display:none" onclick="onBackdropClick(event)">
@@ -553,7 +482,6 @@
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
 
-    <!-- タブ -->
     <div class="auth-tabs">
       <button class="auth-tab active" id="tabLogin"  onclick="switchTab('login')">ログイン</button>
       <button class="auth-tab"        id="tabSignup" onclick="switchTab('signup')">新規登録</button>
@@ -568,22 +496,16 @@
         <label class="auth-label" for="authPassword">パスワード</label>
         <input class="auth-input" id="authPassword" type="password" placeholder="6文字以上" autocomplete="current-password" />
       </div>
-
-      <!-- ログインボタン -->
-      <button class="btn-auth" id="btnLogin" onclick="signIn()">ログインする</button>
-
-      <!-- 新規登録ボタン（タブ切替で表示） -->
+      <button class="btn-auth" id="btnLogin"  onclick="signIn()">ログインする</button>
       <button class="btn-auth" id="btnSignup" onclick="signUp()" style="display:none">アカウントを作成</button>
-
       <div class="auth-msg" id="authMsg"></div>
     </form>
   </div>
 </div>
 
-<!-- ━━━ メイン ━━━ -->
-<main class="main">
+<!-- ━━━ 掲示板ページ ━━━ -->
+<main class="main" id="pageBbs">
 
-  <!-- テーブル未作成時のセットアップ案内 -->
   <div class="setup-card" id="setupCard" style="display:none">
     <h3>⚠️ 初回セットアップ：Supabase でテーブルを作成してください</h3>
     <pre>create table posts (
@@ -594,7 +516,6 @@
   body       text not null,
   created_at timestamptz default now()
 );
-
 alter table posts enable row level security;
 create policy "anyone can read"   on posts for select using (true);
 create policy "auth users insert" on posts for insert
@@ -602,7 +523,6 @@ create policy "auth users insert" on posts for insert
     <p>👆 Supabase → SQL Editor に貼り付けて「Run」してください。</p>
   </div>
 
-  <!-- ログイン促進バナー（未ログイン時） -->
   <div class="login-banner" id="loginBanner" style="display:none">
     <div>
       <div class="login-banner-text">📝 投稿するにはログインが必要です</div>
@@ -611,7 +531,6 @@ create policy "auth users insert" on posts for insert
     <button class="btn btn-accent" onclick="openModal('login')">ログイン / 登録</button>
   </div>
 
-  <!-- 投稿フォーム（ログイン済みのみ） -->
   <div class="post-form" id="postForm" style="display:none">
     <div class="form-title">✏️ 新しい投稿</div>
     <div class="form-grid">
@@ -638,7 +557,6 @@ create policy "auth users insert" on posts for insert
     </div>
   </div>
 
-  <!-- 投稿一覧 -->
   <div class="filter-bar">
     <h2>投稿一覧</h2>
     <select class="filter-select" id="roomFilter" onchange="applyFilter()">
@@ -653,52 +571,112 @@ create policy "auth users insert" on posts for insert
       <div class="label">読み込み中...</div>
     </div>
   </div>
+</main>
+
+<!-- ━━━ マイページ ━━━ -->
+<main class="main profile-page" id="pageProfile">
+
+  <!-- プロフィールプレビュー -->
+  <div class="profile-hero" id="profileHero">
+    <div class="profile-avatar-lg" id="profileAvatarLg">?</div>
+    <div class="profile-hero-info">
+      <div class="profile-display-name" id="profileDisplayName">—</div>
+      <div class="profile-email" id="profileEmailDisp"></div>
+      <div class="profile-bio-preview" id="profileBioPreview"></div>
+      <div class="profile-links-preview" id="profileLinksPreview"></div>
+      <div class="profile-updated" id="profileUpdated"></div>
+    </div>
+  </div>
+
+  <!-- プロフィール編集フォーム -->
+  <div class="profile-form-card">
+    <div class="profile-form-title">✏️ プロフィールを編集</div>
+    <div class="profile-fields">
+
+      <div class="profile-field">
+        <label class="profile-label" for="profName">表示名</label>
+        <input class="profile-input" id="profName" type="text" placeholder="あなたの名前" maxlength="50" />
+      </div>
+
+      <div class="profile-field">
+        <label class="profile-label" for="profBio">自己紹介</label>
+        <textarea class="profile-input profile-textarea" id="profBio" placeholder="自己紹介を入力..."></textarea>
+      </div>
+
+      <div class="profile-field">
+        <label class="profile-label" for="profLinks">リンク</label>
+        <textarea class="profile-input profile-textarea" id="profLinks"
+          placeholder="https://example.com&#10;https://twitter.com/yourname"
+          style="min-height:72px"></textarea>
+        <div class="profile-hint">1行に1つずつURLを入力してください</div>
+      </div>
+
+    </div>
+    <div class="profile-save-row">
+      <button class="btn-save" id="btnSaveProfile" onclick="saveProfile()">保存する</button>
+      <span class="profile-msg" id="profileMsg"></span>
+    </div>
+  </div>
 
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  // ━━━ 設定（ここに貼り付けてください） ━━━━━━━━━━━━━
   const SUPABASE_URL = 'https://ukfaxwboegjwosqzcwns.supabase.co';
   const SUPABASE_KEY = 'sb_publishable_wcXeCi5ZeJUEniqfc65J2Q_QQGtHDyo';
-  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  const TABLE = 'posts';
+  const POSTS_TABLE    = 'posts';
+  const PROFILES_TABLE = 'profiles';
+
   const { createClient } = supabase;
   const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
   let allPosts  = [];
   let activeTab = 'login';
+  let currentUser = null;
+
+  // ━━━ ページ切替 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  function showPage(page) {
+    document.getElementById('pageBbs').style.display     = page === 'bbs'     ? 'block' : 'none';
+    document.getElementById('pageProfile').style.display = page === 'profile' ? 'block' : 'none';
+    document.getElementById('navBbs').classList.toggle('active',     page === 'bbs');
+    document.getElementById('navProfile').classList.toggle('active', page === 'profile');
+    if (page === 'profile' && currentUser) loadProfile();
+  }
 
   // ━━━ 認証状態の監視 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   db.auth.onAuthStateChange((event, session) => {
-    updateAuthUI(session?.user ?? null);
+    currentUser = session?.user ?? null;
+    updateAuthUI(currentUser);
   });
 
   function updateAuthUI(user) {
-    const areaGuest  = document.getElementById('areaGuest');
-    const areaUser   = document.getElementById('areaUser');
-    const postForm   = document.getElementById('postForm');
+    const areaGuest   = document.getElementById('areaGuest');
+    const areaUser    = document.getElementById('areaUser');
+    const postForm    = document.getElementById('postForm');
     const loginBanner = document.getElementById('loginBanner');
+    const navProfile  = document.getElementById('navProfile');
 
     if (user) {
-      // ログイン済み
-      areaGuest.style.display  = 'none';
-      areaUser.style.display   = 'flex';
-      postForm.style.display   = 'block';
+      areaGuest.style.display   = 'none';
+      areaUser.style.display    = 'flex';
+      postForm.style.display    = 'block';
       loginBanner.style.display = 'none';
+      navProfile.style.display  = 'block';
 
       const email = user.email || '';
       document.getElementById('userEmailLabel').textContent = email;
-      document.getElementById('userAvatarSm').textContent  = email.charAt(0).toUpperCase();
+      document.getElementById('userAvatarSm').textContent   = email.charAt(0).toUpperCase();
+      document.getElementById('profileEmailDisp').textContent = email;
 
       closeModal();
     } else {
-      // 未ログイン
-      areaGuest.style.display  = 'flex';
-      areaUser.style.display   = 'none';
-      postForm.style.display   = 'none';
+      areaGuest.style.display   = 'flex';
+      areaUser.style.display    = 'none';
+      postForm.style.display    = 'none';
       loginBanner.style.display = 'flex';
+      navProfile.style.display  = 'none';
+      showPage('bbs');
     }
   }
 
@@ -727,12 +705,12 @@ create policy "auth users insert" on posts for insert
     document.getElementById('tabSignup').classList.toggle('active', tab === 'signup');
     document.getElementById('btnLogin').style.display  = tab === 'login'  ? 'block' : 'none';
     document.getElementById('btnSignup').style.display = tab === 'signup' ? 'block' : 'none';
-    document.getElementById('modalTitle').textContent  = tab === 'login' ? 'ログイン' : '新規登録';
+    document.getElementById('modalTitle').textContent   = tab === 'login' ? 'ログイン' : '新規登録';
     document.getElementById('authPassword').placeholder = tab === 'login' ? 'パスワード' : '6文字以上のパスワード';
     clearAuthMsg();
   }
 
-  // ━━━ 新規登録 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ━━━ 新規登録 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   async function signUp() {
     const email    = document.getElementById('authEmail').value.trim();
     const password = document.getElementById('authPassword').value;
@@ -741,22 +719,15 @@ create policy "auth users insert" on posts for insert
     if (!email || !password) { showAuthMsg('メールとパスワードを入力してください', 'err'); return; }
     if (password.length < 6) { showAuthMsg('パスワードは6文字以上にしてください', 'err'); return; }
 
-    btn.disabled = true;
-    btn.textContent = '登録中...';
-
+    btn.disabled = true; btn.textContent = '登録中...';
     const { error } = await db.auth.signUp({ email, password });
+    btn.disabled = false; btn.textContent = 'アカウントを作成';
 
-    btn.disabled = false;
-    btn.textContent = 'アカウントを作成';
-
-    if (error) {
-      showAuthMsg(authErrMsg(error), 'err');
-    } else {
-      showAuthMsg('✅ 確認メールを送信しました。メール内のリンクをクリックしてください。', 'ok');
-    }
+    if (error) showAuthMsg(authErrMsg(error), 'err');
+    else showAuthMsg('✅ 確認メールを送信しました。受信箱をご確認ください。', 'ok');
   }
 
-  // ━━━ ログイン ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ━━━ ログイン ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   async function signIn() {
     const email    = document.getElementById('authEmail').value.trim();
     const password = document.getElementById('authPassword').value;
@@ -764,27 +735,116 @@ create policy "auth users insert" on posts for insert
 
     if (!email || !password) { showAuthMsg('メールとパスワードを入力してください', 'err'); return; }
 
-    btn.disabled = true;
-    btn.textContent = 'ログイン中...';
-
+    btn.disabled = true; btn.textContent = 'ログイン中...';
     const { error } = await db.auth.signInWithPassword({ email, password });
-
-    btn.disabled = false;
-    btn.textContent = 'ログインする';
+    btn.disabled = false; btn.textContent = 'ログインする';
 
     if (error) showAuthMsg(authErrMsg(error), 'err');
-    // 成功時は onAuthStateChange が自動で UI を更新
   }
 
-  // ━━━ ログアウト ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  async function signOut() {
-    await db.auth.signOut();
+  // ━━━ ログアウト ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  async function signOut() { await db.auth.signOut(); }
+
+  // ━━━ プロフィール取得 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  async function loadProfile() {
+    if (!currentUser) return;
+
+    const { data, error } = await db
+      .from(PROFILES_TABLE)
+      .select('*')
+      .eq('user_id', currentUser.id)
+      .maybeSingle();
+
+    if (error) {
+      console.error(error);
+      showProfileMsg('プロフィールの取得に失敗しました', 'err');
+      return;
+    }
+
+    if (data) {
+      document.getElementById('profName').value  = data.name  || '';
+      document.getElementById('profBio').value   = data.bio   || '';
+      document.getElementById('profLinks').value = data.links || '';
+      renderProfileHero(data);
+    } else {
+      // 初回 — フォームは空のまま、プレビューだけメール表示
+      const email = currentUser.email || '';
+      document.getElementById('profileDisplayName').textContent = email.split('@')[0];
+      document.getElementById('userAvatarSm').textContent = email.charAt(0).toUpperCase();
+      renderAvatarLg(email.charAt(0).toUpperCase(), avatarColor(email));
+    }
   }
 
-  // ━━━ 投稿取得 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ━━━ プロフィールプレビュー描画 ━━━━━━━━━━━━━━━━━━━━
+  function renderProfileHero(data) {
+    const name    = data.name  || (currentUser?.email || '').split('@')[0];
+    const initial = name.charAt(0).toUpperCase();
+    const color   = avatarColor(name);
+
+    document.getElementById('profileDisplayName').textContent = name;
+    document.getElementById('userAvatarSm').textContent = initial;
+    renderAvatarLg(initial, color);
+
+    document.getElementById('profileBioPreview').textContent = data.bio || '';
+
+    // リンク
+    const linksEl = document.getElementById('profileLinksPreview');
+    const links = (data.links || '').split('\n').map(s => s.trim()).filter(Boolean);
+    linksEl.innerHTML = links.map(url => {
+      const safe = escHtml(url);
+      return `<a class="profile-link" href="${safe}" target="_blank" rel="noopener">${safe}</a>`;
+    }).join('');
+
+    // 最終更新
+    if (data.updated_at) {
+      const d = new Date(data.updated_at).toLocaleString('ja-JP', { year:'numeric', month:'numeric', day:'numeric', hour:'2-digit', minute:'2-digit' });
+      document.getElementById('profileUpdated').textContent = `最終更新: ${d}`;
+    }
+  }
+
+  function renderAvatarLg(initial, color) {
+    const el = document.getElementById('profileAvatarLg');
+    el.textContent = initial;
+    el.style.background = color;
+  }
+
+  // ━━━ プロフィール保存 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  async function saveProfile() {
+    if (!currentUser) { showProfileMsg('ログインが必要です', 'err'); return; }
+
+    const name  = document.getElementById('profName').value.trim();
+    const bio   = document.getElementById('profBio').value.trim();
+    const links = document.getElementById('profLinks').value.trim();
+    const btn   = document.getElementById('btnSaveProfile');
+
+    btn.disabled = true; btn.textContent = '保存中...';
+
+    const { error } = await db
+      .from(PROFILES_TABLE)
+      .upsert(
+        { user_id: currentUser.id, name, bio, links, updated_at: new Date().toISOString() },
+        { onConflict: 'user_id' }
+      );
+
+    btn.disabled = false; btn.textContent = '保存する';
+
+    if (error) {
+      console.error(error);
+      showProfileMsg('保存に失敗しました: ' + error.message, 'err');
+      return;
+    }
+
+    // 投稿フォームの名前欄にも反映
+    if (name) document.getElementById('inputName').value = name;
+
+    showProfileMsg('✅ 保存しました！', 'ok');
+    renderProfileHero({ name, bio, links, updated_at: new Date().toISOString() });
+  }
+
+  // ━━━ 掲示板：投稿取得 ━━━━━━━━━━━━━━━━━━━━━━━━━━━
   async function loadPosts() {
     const { data, error } = await db
-      .from(TABLE)
+      .from(POSTS_TABLE)
       .select('*')
       .order('created_at', { ascending: false });
 
@@ -857,10 +917,9 @@ create policy "auth users insert" on posts for insert
     }).join('');
   }
 
-  // ━━━ 投稿送信 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ━━━ 掲示板：投稿送信 ━━━━━━━━━━━━━━━━━━━━━━━━━━━
   async function submitPost() {
-    const { data: { user } } = await db.auth.getUser();
-    if (!user) { showStatus('ログインが必要です', 'err'); return; }
+    if (!currentUser) { showStatus('ログインが必要です', 'err'); return; }
 
     const name  = document.getElementById('inputName').value.trim()  || '名無しさん';
     const room  = document.getElementById('inputRoom').value.trim()  || 'general';
@@ -871,13 +930,9 @@ create policy "auth users insert" on posts for insert
     if (!title) { showStatus('タイトルを入力してください', 'err'); return; }
     if (!body)  { showStatus('内容を入力してください', 'err'); return; }
 
-    btn.disabled = true;
-    btn.textContent = '送信中...';
-
-    const { error } = await db.from(TABLE).insert({ name, room, title, body });
-
-    btn.disabled = false;
-    btn.textContent = '投稿する';
+    btn.disabled = true; btn.textContent = '送信中...';
+    const { error } = await db.from(POSTS_TABLE).insert({ name, room, title, body });
+    btn.disabled = false; btn.textContent = '投稿する';
 
     if (error) {
       console.error(error);
@@ -892,35 +947,39 @@ create policy "auth users insert" on posts for insert
     await loadPosts();
   }
 
-  // ━━━ リアルタイム ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ━━━ リアルタイム ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   function subscribeRealtime() {
     db.channel('my-bbs')
-      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: TABLE }, () => loadPosts())
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: POSTS_TABLE }, () => loadPosts())
       .subscribe(status => {
         if (status === 'SUBSCRIBED') document.getElementById('liveBadge').style.display = 'inline-flex';
       });
   }
 
-  // ━━━ ユーティリティ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ━━━ ユーティリティ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   function showStatus(text, type) {
     const el = document.getElementById('statusMsg');
-    el.textContent = text;
-    el.className = 'status-msg ' + (type || '');
+    el.textContent = text; el.className = 'status-msg ' + (type || '');
     setTimeout(() => { el.textContent = ''; el.className = 'status-msg'; }, 3500);
+  }
+
+  function showProfileMsg(text, type) {
+    const el = document.getElementById('profileMsg');
+    el.textContent = text; el.className = 'profile-msg ' + (type || '');
+    setTimeout(() => { el.textContent = ''; el.className = 'profile-msg'; }, 4000);
   }
 
   function showAuthMsg(text, type) {
     const el = document.getElementById('authMsg');
-    el.textContent = text;
-    el.className = 'auth-msg ' + (type || '');
+    el.textContent = text; el.className = 'auth-msg ' + (type || '');
   }
 
   function clearAuthMsg() { showAuthMsg('', ''); }
 
   function authErrMsg(error) {
     const msg = error.message || '';
-    if (msg.includes('Invalid login'))   return 'メールアドレスまたはパスワードが違います';
-    if (msg.includes('Email not confirmed')) return 'メール確認が完了していません。受信箱を確認してください';
+    if (msg.includes('Invalid login'))           return 'メールアドレスまたはパスワードが違います';
+    if (msg.includes('Email not confirmed'))     return 'メール確認が完了していません。受信箱を確認してください';
     if (msg.includes('User already registered')) return 'このメールアドレスはすでに登録されています';
     if (msg.includes('Password should be'))      return 'パスワードは6文字以上にしてください';
     return msg;
@@ -939,7 +998,7 @@ create policy "auth users insert" on posts for insert
     return PALETTE[h % PALETTE.length];
   }
 
-  // ━━━ 起動 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ━━━ 起動 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   loadPosts();
   subscribeRealtime();
 </script>
